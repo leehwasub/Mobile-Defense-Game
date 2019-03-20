@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Monster
+  - Character
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 3775075669
+    locked: 0
+  - name: Unit
+    uniqueID: 1643788019
+    locked: 0
+  - name: Additional
+    uniqueID: 1913200649
+    locked: 0
+  - name: Basic Canvas
+    uniqueID: 755616275
+    locked: 0
+  - name: Menu Canvas
+    uniqueID: 1603629779
+    locked: 0
