@@ -1000,10 +1000,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5532cacc6e3b794eb24bfe53dc6a7d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnSpot1: {fileID: 1888712284}
-  respawnSpot2: {fileID: 209286110}
-  respawnSpot3: {fileID: 1895716388}
-  respawnSpot4: {fileID: 2105770508755274967}
+  respawnSpotList:
+  - {fileID: 1888712284}
+  - {fileID: 209286110}
+  - {fileID: 1895716388}
+  - {fileID: 2105770508755274967}
   monster1Prefab: {fileID: 3979601037952996114, guid: 1718aa8670fec6b4e8bcba551c408419,
     type: 3}
   monster2Prefab: {fileID: 6841175316417871418, guid: ec9065c032f61264b9f2997627419b0e,
