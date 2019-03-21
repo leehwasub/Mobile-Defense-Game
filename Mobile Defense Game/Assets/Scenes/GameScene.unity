@@ -1009,6 +1009,53 @@ MonoBehaviour:
     type: 3}
   monster2Prefab: {fileID: 6841175316417871418, guid: ec9065c032f61264b9f2997627419b0e,
     type: 3}
+--- !u!1 &336841436
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 336841438}
+  - component: {fileID: 336841437}
+  m_Layer: 0
+  m_Name: Bullet2 Object Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &336841437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336841436}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d51812bb36bdc42a6f9a896cdd3fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 1595906468512758439, guid: d84db31b260b1294c9324dd61cfd2d07,
+    type: 3}
+  poolCount: 28
+  more: 1
+--- !u!4 &336841438
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 336841436}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6244815, y: 0.019696679, z: -0.087890625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &359942509
 GameObject:
   m_ObjectHideFlags: 0
@@ -3701,6 +3748,53 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1494051818}
   m_CullTransparentMesh: 0
+--- !u!1 &1495190881
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1495190883}
+  - component: {fileID: 1495190882}
+  m_Layer: 0
+  m_Name: Bullet1 Object Pool
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1495190882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495190881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40d51812bb36bdc42a6f9a896cdd3fa6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pooledObject: {fileID: 9118461668273961058, guid: a397ba71992850f4b8abc5aebc861535,
+    type: 3}
+  poolCount: 28
+  more: 1
+--- !u!4 &1495190883
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1495190881}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.6244815, y: 0.019696679, z: -0.087890625}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1497127323
 GameObject:
   m_ObjectHideFlags: 0
@@ -4746,6 +4840,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c8df376f5b5a004589ce9a7bddc31a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletAddCount: 0
+  characterAddCount: 0
+  monsterAddCount: 0
   seedText: {fileID: 151315862}
   roundText: {fileID: 659966873}
   roundStartText: {fileID: 2110361050}
