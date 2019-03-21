@@ -11,35 +11,24 @@ public class CreateMonster : MonoBehaviour
 
     private GameObject monsterPrefab;
 
-    private float lastSpawnTime;
     private int spawnCount = 0;
-
-    CreateMonster()
-    {
-        respawnSpotList = new List<GameObject>();
-    }
+    private IEnumerator coroutine;
 
     void Start()
     {
-
         monsterPrefab = monster1Prefab;
-        lastSpawnTime = Time.time;
+        coroutine = process();
+        StartCoroutine(coroutine);
     }
 
-    void Update()
+    IEnumerator process()
     {
-        if(GameManager.instance.round <= GameManager.instance.totalRound)
+        while (true)
         {
-            float timeGap = Time.time - lastSpawnTime;
-            if(((spawnCount == 0 && timeGap > GameManager.instance.roundReadyTime) || timeGap > GameManager.instance.spawnTime)
-                && spawnCount < GameManager.instance.spawnNumber)
+            if (GameManager.instance.round > GameManager.instance.totalRound) StopCoroutine(coroutine);
+            if(spawnCount < GameManager.instance.spawnNumber)
             {
-                lastSpawnTime = Time.time;
-                int index = Random.Range(0, 4);
-                GameObject respawnSpot = respawnSpotList[index];
-                Instantiate(monsterPrefab, respawnSpot.transform.position, Quaternion.identity);
-                GameManager.instance.monsterAddCount++;
-                spawnCount += 1;
+                Create();
             }
             if(spawnCount == GameManager.instance.spawnNumber && GameObject.FindGameObjectWithTag("Monster") == null)
             {
@@ -47,19 +36,32 @@ public class CreateMonster : MonoBehaviour
                 {
                     GameManager.instance.gameClear();
                     GameManager.instance.round += 1;
-                    return;
                 }
-                GameManager.instance.clearRound();
-                spawnCount = 0;
-                lastSpawnTime = Time.time;
-
-                if(GameManager.instance.round == 4)
+                else
                 {
-                    monsterPrefab = monster2Prefab;
-                    GameManager.instance.spawnTime = 2.0f;
-                    GameManager.instance.spawnNumber = 10;
+                    GameManager.instance.clearRound();
+                    spawnCount = 0;
+                    if (GameManager.instance.round == 4)
+                    {
+                        monsterPrefab = monster2Prefab;
+                        GameManager.instance.spawnTime = 2.0f;
+                        GameManager.instance.spawnNumber = 10;
+                    }
                 }
             }
+            if (spawnCount == 0) yield return new WaitForSeconds(GameManager.instance.roundReadyTime);
+            else yield return new WaitForSeconds(GameManager.instance.spawnTime);
         }
     }
+
+    void Create()
+    {
+        int index = Random.Range(0, 4);
+        GameObject respawnSpot = respawnSpotList[index];
+        Instantiate(monsterPrefab, respawnSpot.transform.position, Quaternion.identity);
+        GameManager.instance.monsterAddCount++;
+        spawnCount += 1;
+    }
+
+   
 }
